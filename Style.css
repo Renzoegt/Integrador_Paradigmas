@@ -85,6 +85,20 @@ body {
       gap: 1.5rem;
     }
 
+    .ind-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .individual-column {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
     .card {
       background: #4b5563;
       color: white;
@@ -128,3 +142,9 @@ body {
       display: block;
       padding: 1rem;
     }
+    footer {
+    background: #111827;
+    color: white;
+    padding: 3rem 0 1.5rem;
+    margin-top: 4rem;
+}
