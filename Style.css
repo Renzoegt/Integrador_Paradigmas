@@ -53,7 +53,8 @@ body {
       gap: 10px;
     }
     .logo img {
-      display: block;
+      display: inline-block;
+      height: 40px;
     }
     .logo h1 {
       margin: 0;
