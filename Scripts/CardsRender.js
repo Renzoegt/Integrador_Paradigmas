@@ -9,9 +9,9 @@ const collections = {
     { link: `${prefix}/HTML/Templates/text-tem.html`, img: `${prefix}/Assets/Images/Camus.jfif`, title: "Albert Camus", items: "12,345" }
   ],
   videos: [
-    { link: `${prefix}/HTML/videos.html`, img: `${prefix}/Assets/Images/AlwaysSunny.jfif`, title: "Always Sunny In Philadelphia", items: "8,920" },
-    { link: `${prefix}/HTML/videos.html`, img: `${prefix}/Assets/Images/Nosfe.jfif`, title: "Terror Clásico", items: "8,920" },
-    { link: `${prefix}/HTML/videos.html`, img: `${prefix}/Assets/Images/The yard.jfif`, title: "The Yard", items: "8,920" }
+    { link: `${prefix}/HTML/Templates/vid-tem.html`, img: `${prefix}/Assets/Images/Nosfe.jfif`, title: "Terror Clásico", items: "8,920" },
+    { link: `${prefix}/HTML/Templates/vid-tem.html`, img: `${prefix}/Assets/Images/AlwaysSunny.jfif`, title: "Always Sunny In Philadelphia", items: "8,920" },
+    { link: `${prefix}/HTML/Templates/vid-tem.html`, img: `${prefix}/Assets/Images/The yard.jfif`, title: "The Yard", items: "8,920" }
   ],
   imagenes: [
     { link: `${prefix}/HTML/Templates/img-tem.html`, img: `${prefix}/Assets/Images/fauna.jfif`, title: "Fauna Argentina", items: "4,501" },

@@ -4,7 +4,7 @@ const collections = {
     { title: "Borges - Ficciones", content: "Contenido obtenido de the Internet Archive", url: "https://dn721802.ca.archive.org/0/items/ficciones-borges/Ficciones%20-%20Borges.pdf" }
   ],
   videos: [
-    { title: "Nosferatu", content: "Película clásica de terror", videoUrl: "https://archive.org/embed/nosferatu1922" }
+    { title: "Nosferatu", content: "Película clásica de terror, obtenida de the internet archive", videoUrl: "https://dn720403.ca.archive.org/0/items/videoplayback-5_202203/videoplayback%20%285%29.mp4" }
   ],
   imagenes: [
     { title: "Yaguarete argentino", content: "Fotografía de fauna", img: "../../Assets/Images/fauna.jfif" }
@@ -29,7 +29,7 @@ function renderContent(containerId, category) {
       return `
         <article class="content-card">
           <h3>${item.title}</h3>
-          <iframe src="${item.videoUrl}" frameborder="0" allowfullscreen></iframe>
+          <video controls="" autoplay="" width="100%" name=${item.title}><source src=${item.videoUrl} type="video/mp4"></video>
           <p>${item.content}</p>
         </article>
       `;
