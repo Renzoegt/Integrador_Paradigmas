@@ -4,9 +4,9 @@ const prefix = window.location.pathname.includes("/HTML/") ? ".." : ".";
 
 const collections = {
   textos: [
-    { link: `${prefix}/HTML/textos.html`, img: `${prefix}/Assets/Images/Borges.jfif`, title: "Jorge Luis Borges", items: "12,345" },
-    { link: `${prefix}/HTML/textos.html`, img: `${prefix}/Assets/Images/Dostoevski.jfif`, title: "Fyodor Dostoyevski", items: "12,345" },
-    { link: `${prefix}/HTML/textos.html`, img: `${prefix}/Assets/Images/Camus.jfif`, title: "Albert Camus", items: "12,345" }
+    { link: `${prefix}/HTML/Templates/text-tem.html`, img: `${prefix}/Assets/Images/Borges.jfif`, title: "Jorge Luis Borges", items: "12,345" },
+    { link: `${prefix}/HTML/Templates/text-tem.html`, img: `${prefix}/Assets/Images/Dostoevski.jfif`, title: "Fyodor Dostoyevski", items: "12,345" },
+    { link: `${prefix}/HTML/Templates/text-tem.html`, img: `${prefix}/Assets/Images/Camus.jfif`, title: "Albert Camus", items: "12,345" }
   ],
   videos: [
     { link: `${prefix}/HTML/videos.html`, img: `${prefix}/Assets/Images/AlwaysSunny.jfif`, title: "Always Sunny In Philadelphia", items: "8,920" },
@@ -14,9 +14,9 @@ const collections = {
     { link: `${prefix}/HTML/videos.html`, img: `${prefix}/Assets/Images/The yard.jfif`, title: "The Yard", items: "8,920" }
   ],
   imagenes: [
-    { link: `${prefix}/HTML/imagenes.html`, img: `${prefix}/Assets/Images/fauna.jfif`, title: "Fauna Argentina", items: "4,501" },
-    { link: `${prefix}/HTML/imagenes.html`, img: `${prefix}/Assets/Images/flora.jfif`, title: "Flora Argentina", items: "4,501" },
-    { link: `${prefix}/HTML/imagenes.html`, img: `${prefix}/Assets/Images/foto.jfif`, title: "Fotografía Argentina", items: "4,501" }
+    { link: `${prefix}/HTML/Templates/img-tem.html`, img: `${prefix}/Assets/Images/fauna.jfif`, title: "Fauna Argentina", items: "4,501" },
+    { link: `${prefix}/HTML/Templates/img-tem.html`, img: `${prefix}/Assets/Images/flora.jfif`, title: "Flora Argentina", items: "4,501" },
+    { link: `${prefix}/HTML/Templates/img-tem.html`, img: `${prefix}/Assets/Images/foto.jfif`, title: "Fotografía Argentina", items: "4,501" }
   ]
 };
 // Función para renderizar tarjetas
