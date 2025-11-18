@@ -1,9 +1,8 @@
 <?php
 require "../Config/conexion.php";
-
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $user = $_POST["usuario"];
-    $pass = password_hash($_POST["password"], PASSWORD_DEFAULT);
+    $user = $_POST["Usuario"];
+    $pass = password_hash($_POST["Contraseña"], PASSWORD_DEFAULT);
 
     $sql = "INSERT INTO usuarios (username, password) VALUES (?, ?)";
     $stmt = $conn->prepare($sql);
@@ -51,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     <main>
         <section class="login-container">
-            <h2 style="text-align: center;">Iniciar Sesión</h2>
+            <h2 style="text-align: center;">Registrarse</h2>
             <form method="POST" style="text-align: center;">
                 <label for="Usuario">Usuario:</label>
                 <input type="text" id="Usuario" name="Usuario" placeholder="Ingrese su usuario" required>

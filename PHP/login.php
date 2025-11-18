@@ -3,8 +3,8 @@ session_start();
 require_once "../Config/conexion.php";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $user = $_POST['usuario'];
-    $pass = $_POST['password'];
+    $user = $_POST['Usuario'];
+    $pass = $_POST['Contraseña'];
 
     $sql = "SELECT * FROM usuarios WHERE username = ?";
     $stmt = $conn->prepare($sql);
@@ -68,6 +68,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <br>
                 <label for="Contraseña">Contraseña:</label>
                 <input type="password" id="Contraseña" name="Contraseña" placeholder="Ingrese su contraseña" required>
+                <br>
+                <a href="registro.php">Regístrate aquí</a>
                 <br>
                 <button type="submit">Iniciar Sesión</button>
             </form>
