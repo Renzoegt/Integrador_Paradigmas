@@ -9,29 +9,8 @@
 </head>
 <body>
   <!-- Navbar -->
-    <nav>
-      <div class="logo">
-        <a href="../index.html"><img src="../Assets/Images/icono.png" height="40" alt="logo"></a>
-        <h1><a href="../index.html">MediaVault</a></h1>
-      </div>
-
-  <!-- Botón hamburguesa -->
-      <button class="menu-toggle" id="menu-toggle">&#9776;</button>
-
-  <!-- Menú -->
-      <ul id="nav-links">
-        <li><a href="./sobrenosotros.html">Sobre Nosotros</a></li>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="./imagenes.html">Imagenes</a></li>
-        <li><a href="./textos.html">Textos</a></li>
-        <li><a href="./videos.html">Videos</a></li>
-        <li><a href="./login.html">Iniciar Sesión</a></li>
-      </ul>
-    </nav>
-
-  <!-- Script para togglear el menú -->
-    <script src="../Scripts/navbar.js"></script>
-
+    <?php include "../Assets/Templates/Componentes/navbar.php"; ?>
+  
   <!-- Contenido Principal -->
     <main>
         <section>

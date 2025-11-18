@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once "Config/conexion.php";
+require_once "./Config/conexion.php";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $user = $_POST['usuario'];
@@ -36,30 +36,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="Styles/Style.css">
 </head>
 <body>
-  <!-- Navbar -->
-    <nav>
-      <div class="logo">
-        <a href="./index.html"><img src="./Assets/Images/icono.png" height="40" alt="logo"></a>
-        <h1><a href="./index.html">MediaVault</a></h1>
-      </div>
-
-  <!-- Botón hamburguesa -->
-      <button class="menu-toggle" id="menu-toggle">&#9776;</button>
-
   <!-- Menú -->
-      <ul id="nav-links">
-        <li><a href="./HTML/sobrenosotros.html">Sobre Nosotros</a></li>
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="./HTML/imagenes.html">Imagenes</a></li>
-        <li><a href="./HTML/textos.html">Textos</a></li>
-        <li><a href="./HTML/videos.html">Videos</a></li>
-        <li><a href="./PHP/login.php">Iniciar Sesión</a></li>
-      </ul>
-    </nav>
-
-  <!-- Script para togglear el menú -->
-    <script src="./Scripts/navbar.js"></script>
-
+    <?php include "./Assets/Templates/Componentes/navbar.php"; ?>
 
   <!-- Principales Colecciones -->
     <section class="collections">
@@ -70,13 +48,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div id="imagenes" class="column"></div>
         </div>
     </section>
-
+    
+  <!-- renderizado de contenido-->
+  <?php include "./PHP/render.php"; ?>
   <!-- Footer -->
   <footer>
     <p>&copy; 2025 MediaVault. Renzo Gómez Terrussi.</p>
   </footer>
-
-  <!-- External script -->
-  <script src="./Scripts/CardsRender.js"></script>
-</body>
+</body> 
 </html>

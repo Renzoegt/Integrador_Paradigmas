@@ -25,29 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <link rel="stylesheet" href="../Styles/Style.css">
 </head>
 <body>
-    <nav>
-      <div class="logo">
-        <a href="../index.php"><img src="../Assets/Images/icono.png" height="40" alt="logo"></a>
-        <h1><a href="../index.php">MediaVault</a></h1>
-      </div>
-
-  <!-- Botón hamburguesa -->
-      <button class="menu-toggle" id="menu-toggle">&#9776;</button>
-
-  <!-- Menú -->
-      <ul id="nav-links">
-        <li><a href="../HTML/sobrenosotros.html">Sobre Nosotros</a></li>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../HTML/imagenes.html">Imagenes</a></li>
-        <li><a href="../HTML/textos.html">Textos</a></li>
-        <li><a href="../HTML/videos.html">Videos</a></li>
-        <li><a href="./login.php">Iniciar Sesión</a></li>
-      </ul>
-    </nav>
-
-  <!-- Script para togglear el menú -->
-    <script src="../Scripts/navbar.js"></script>
-
+    <?php include "../Assets/Templates/Componentes/navbar.php"; ?>
     <main>
         <section class="login-container">
             <h2 style="text-align: center;">Registrarse</h2>
