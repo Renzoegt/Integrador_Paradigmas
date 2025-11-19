@@ -91,7 +91,7 @@ $es_dueno  = isset($_SESSION["id"]) && $_SESSION["id"] == $item["usuario_id"];
                     <?php if ($archivo): ?>
                         <video controls="" autoplay="" width="100%" name=><source src="<?= $archivo ?>" type="video/mp4"></video>
                     <?php elseif ($url): ?>
-                            <iframe src="<?= $url ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            <iframe src="<?= $url ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" frameborder="0" style="width: 100%; height:25rem;" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     <?php else: ?>
                         <p>No hay archivo disponible.</p>
                     <?php endif; ?>
