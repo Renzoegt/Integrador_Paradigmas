@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $row = $result->fetch_assoc();
 
         if (password_verify($pass, $row['password'])) {
-            $_SESSION['usuario_id'] = $row['id'];
+            $_SESSION['id'] = $row['id'];
             $_SESSION['username'] = $row['username'];
             header("Location: index.php");
             exit();
@@ -24,6 +24,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     $error = "Usuario o contraseña incorrectos";
+}
+
+$items = [
+    "texto" => [],
+    "video" => [],
+    "imagen" => []
+];
+
+$sql = "SELECT c.*, u.username AS usuario_nombre
+        FROM contenido c
+        INNER JOIN usuarios u ON c.usuario_id = u.id
+        ORDER BY c.tipo, c.fecha DESC";
+
+$result = $conn->query($sql);
+
+if ($result && $result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $tipo = $row["tipo"];
+        $items[$tipo][] = $row;
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -41,17 +61,44 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   <!-- Principales Colecciones -->
     <section class="collections">
-        <h2>Colecciones en Tendencia</h2>
+        <h2>Bienvenido a MediaVault</h2>
+        <h3>Explora nuestras colecciones principales</h3>
         <div class="grid">
-        <div id="textos" class="column"></div>
-        <div id="videos" class="column"></div>
-        <div id="imagenes" class="column"></div>
+        <div id="textos" class="column">
+            <?php foreach ($items["texto"] ?? [] as $i): ?>
+                <div class="card">
+                <a href="./PHP/ver.php?id=<?= $i['id'] ?>">
+                    <img src="PHP/<?= $i['miniatura'] ?>" class="miniatura">
+                    <h3><?= $i['nombre'] ?></h3>
+                    <p>Subido por: <?= $i['usuario_nombre'] ?></p>
+                </a>
+                </div>
+            <?php endforeach; ?>
+        </div>
+        <div id="videos" class="column">
+            <?php foreach ($items["video"] ?? [] as $i): ?>
+                <div class="card">
+                <a href="./PHP/ver.php?id=<?= $i['id'] ?>">
+                    <img src="PHP/<?= $i['miniatura'] ?>" class="miniatura">
+                    <h3><?= $i['nombre'] ?></h3>
+                    <p>Subido por: <?= $i['usuario_nombre'] ?></p>
+                </a>
+                </div>
+            <?php endforeach; ?>
+        </div>
+        <div id="imagenes" class="column">
+            <?php foreach ($items["imagen"] ?? [] as $i): ?>
+                <div class="card">
+                <a href="./PHP/ver.php?id=<?= $i['id'] ?>">
+                    <img src="PHP/<?= $i['miniatura'] ?>" class="miniatura">
+                    <h3><?= $i['nombre'] ?></h3>
+                    <p>Subido por: <?= $i['usuario_nombre'] ?></p>
+                </a>
+                </div>
+            <?php endforeach; ?>
+        </div>
         </div>
     </section>
-    
-  <!-- renderizado de contenido-->
-  <?php include "./PHP/render.php"; ?>
-  <!-- Footer -->
   <footer>
     <p>&copy; 2025 MediaVault. Renzo Gómez Terrussi.</p>
   </footer>

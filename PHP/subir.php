@@ -32,6 +32,9 @@ if (session_status() === PHP_SESSION_NONE) {
                     <option value="texto">Texto / PDF</option>
                 </select>
                 <br>
+                <label for="miniatura">Miniatura:</label>
+                <input type="file" name="miniatura" id="miniatura" accept="image/*">
+                <br>
                 <label for="descripcion">Ingrese una descripción</label>
                 <input type="text" name="descripcion" id="descripcion" placeholder="Ingrese una descripcion" required>
                 <br>
